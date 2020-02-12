@@ -1,0 +1,18 @@
+### 轮播图
+
+接口名称|接口路径
+---|:--:
+获取轮播图|/banner/getBanner
+
+### 课程相关
+接口名称|接口路径
+---|:--:
+获取最新课程|/source/getLatest
+获取全部课程|/sourece/getAll
+根据id获取课程详情|/source/getDetailById
+获取所有课程种类|/source/getAlltype
+根据种类id获取课程|/source/getSourceByTypeId
+根据用户获取学习的课程|/source/getMySource
+添加到我的课程|/source/addMySource
+删除我的课程|source/deleteMySource
+搜索课程|source/search
