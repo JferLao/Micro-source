@@ -30,13 +30,28 @@
 热门搜索关键字|/book/hot_keyword
 
 ### 用户相关
+
 接口名称|api接口路径
 ---|:--:
-token获取|/token/get
+token获取|/token/login
 token验证/token/verify
 注册接口|/user/register
 修改个人信息|/user/infonation
 关于我|/about
 帮助中心|/help
 
+----
+
 # 接口文档
+
+## /token/login
+>用于微信登录接口,需要通过微信获取openid
+```
+account:openid //调用wx.login()获取的openid
+```
+
+## /token/verify
+>用于验证微信token
+```
+token:token值
+```

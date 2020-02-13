@@ -60,23 +60,14 @@ class RegisterValidator extends LinValidator {
 class TokenValidator extends LinValidator {
     constructor() {
         super()
-        this.secret = [
-            new Rule('isOptional'),
-            new Rule('isLength', '至少6个字符', {
-                min: 6,
-                max: 128
+        this.account = [
+            new Rule('isLength', '账号长度不符合规范', {
+                min: 4,
+                max: 32
             })
         ]
     }
 
-    validateLoginType(vals) {
-        if (!vals.body.type) {
-            throw new Error('type是必传参数')
-        }
-        if (!LoginType.isThisType(vals.body.type)) {
-            throw new Error('type参数不合法')
-        }
-    }
 }
 
 class NotEmptyValitador extends LinValidator {
