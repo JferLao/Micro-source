@@ -1,5 +1,7 @@
 const requireDirectory = require('require-directory')
 const Router = require('koa-router')
+
+// 全局保存的方法和数据
 class InitManager {
     static initCore(app) {
         // 入口方法
@@ -8,8 +10,9 @@ class InitManager {
 
         // 在类里面调用静态方法
         InitManager.initLoadRouters()
-
+            // 全局进行异常处理
         InitManager.loadHttpException()
+            // 把设置保存在全局中
         InitManager.loadConfig()
     }
 
@@ -22,7 +25,6 @@ class InitManager {
     static initLoadRouters() {
         // 使用绝对路径
         const apiDirectory = `${process.cwd()}/app/api`
-
         requireDirectory(module, apiDirectory, { visit: whenLoadModule })
 
         // 加载路由时的回调

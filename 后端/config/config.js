@@ -10,7 +10,7 @@ module.exports = {
     },
     security: {
         // 设置的令牌
-        secretKey: "abcdef",
+        secretKey: "jferlaoSource",
         // 失效时间设置为1个小时
         expiresIn: 60 * 60 * 24 * 30
 

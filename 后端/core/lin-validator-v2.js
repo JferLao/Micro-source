@@ -1,18 +1,9 @@
 const validator = require('validator')
-const {
-    ParameterException
-} = require('./http-exception')
-const {
-    get,
-    last,
-    set,
-    cloneDeep
-} = require("lodash")
-const {
-    findMembers
-} = require('./util')
+const { ParameterException } = require('./http-exception')
+const {get, last, set, cloneDeep } = require("lodash")
+const { findMembers } = require('./util')
 
-
+// lin校验器
 class LinValidator {
     constructor() {
         this.data = {}
