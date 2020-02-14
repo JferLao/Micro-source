@@ -44,6 +44,7 @@ token验证/token/verify
 
 # 接口文档
 
+## 登陆类
 ## /token/login
 >用于微信登录接口,需要通过微信获取openid
 ```
@@ -54,4 +55,13 @@ account:openid //调用wx.login()获取的openid
 >用于验证微信token
 ```
 token:token值
+```
+
+----
+
+## banner类
+## /banner/getBanner
+>获取全部轮播图
+```
+不需要参数
 ```
