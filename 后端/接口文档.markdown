@@ -65,3 +65,32 @@ token:token值
 ```
 不需要参数
 ```
+
+## book类
+## /book/getHotBookList
+>获取热销图书的列表
+```
+不需要参数
+```
+
+## /book/detail/:id
+>根据书本id获取书本详情
+```
+//在url地址上传递id
+```
+
+## /book/search
+>书本搜索
+```
+参数:
+q:"东野圭吾" //查询的值
+start:1 //显示的页数
+count:10   //一页显示的条数
+```
+
+## /book/favor/count
+获取图书的点赞数
+```
+不需要参数
+但需要在小程序中携带token令牌
+```
