@@ -5,7 +5,9 @@ const { success } = require('../lib/helper')
 const { HotBook } = require('../models/bookHot')
 const { PositiveIntegerValidator, SearchValidator } = require('../validators/validator')
 const { Book } = require('../models/book')
-    // 获取热销图书的列表
+const { Favor } = require('../models/favor')
+
+// 获取热销图书的列表
 router.post('/getHotBookList', async(ctx) => {
     const books = await HotBook.getAll()
     ctx.body = { books }
@@ -32,6 +34,15 @@ router.post('/favor/count', new Auth().m, async ctx => {
     ctx.body = {
         count
     }
+})
+
+router.post('/favor/:bookId', new Auth().m, async ctx => {
+    const v = await new PositiveIntegerValidator().validate(ctx, {
+        id: 'bookId'
+    })
+    const favor = await Favor.getBookFavor(
+        ctx.auth.uid, v.get('path.bookId'))
+    ctx.body = favor
 })
 
 

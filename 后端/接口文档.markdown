@@ -66,6 +66,8 @@ token:token值
 不需要参数
 ```
 
+----
+
 ## book类
 ## /book/getHotBookList
 >获取热销图书的列表
