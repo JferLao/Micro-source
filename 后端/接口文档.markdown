@@ -28,6 +28,8 @@
 增加短评|/book/add/short_comment
 增加详情书籍的短评|/book/:bookId/short_comment
 热门搜索关键字|/book/hot_keyword
+图书点赞|/book/like
+去图书取消点赞|/book/unlike
 
 ### 用户相关
 
@@ -121,4 +123,20 @@ content:"短评内容"
 >获取热门关键字
 ```
 不需要参数
+```
+
+## /book/like
+>图书点赞
+```
+<!-- 需要携带小程序令牌 -->
+参数
+artId:图书的id
+```
+
+## /book/unlike
+>图书取消点赞
+```
+<!-- 需要携带小程序令牌 -->
+参数
+artId:图书的id
 ```

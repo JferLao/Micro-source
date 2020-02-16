@@ -37,10 +37,6 @@ class Book extends Model {
 }
 
 Book.init({
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-    },
     fav_nums: {
         type: Sequelize.INTEGER,
         default: 0
