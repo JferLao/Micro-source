@@ -91,8 +91,34 @@ count:10   //一页显示的条数
 ```
 
 ## /book/favor/count
-获取图书的点赞数
+>获取图书的点赞数
 ```
 不需要参数
 但需要在小程序中携带token令牌
+```
+
+## /book/favor/:bookId
+>获取书本的点赞
+```
+<!-- 不需要参数,需要携带小程序令牌 -->
+```
+
+## /book/add/short_comment
+>添加短评
+```
+<!-- 需要携带小程序令牌 -->
+bookId:书本id,
+content:"短评内容"
+```
+
+## /book/short_comment/:bookId
+>根据书本id获取短评
+```
+<!-- 需要携带小程序令牌,不需要参数 -->
+```
+
+## /book/hot_keyword
+>获取热门关键字
+```
+不需要参数
 ```

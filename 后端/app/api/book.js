@@ -31,12 +31,13 @@ router.post('/search', async ctx => {
 
 // 获取图书的点赞数
 router.post('/favor/count', new Auth().m, async ctx => {
-        const count = await Book.getMyFavorBookCount(ctx.auth.uid)
-        ctx.body = {
-            count
-        }
-    })
-    //获取书本的点赞
+    const count = await Book.getMyFavorBookCount(ctx.auth.uid)
+    ctx.body = {
+        count
+    }
+})
+
+//获取书本的点赞
 router.post('/favor/:bookId', new Auth().m, async ctx => {
     const v = await new PositiveIntegerValidator().validate(ctx, {
         id: 'bookId'
