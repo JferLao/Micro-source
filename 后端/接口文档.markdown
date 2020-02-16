@@ -36,7 +36,7 @@
 接口名称|api接口路径
 ---|:--:
 token获取|/token/login
-token验证/token/verify
+token验证|/token/verify
 注册接口|/user/register
 修改个人信息|/user/infonation
 关于我|/about
