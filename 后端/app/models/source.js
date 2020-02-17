@@ -2,6 +2,15 @@ const { Sequelize, Model, Op } = require('sequelize')
 const { sequelize } = require('../../core/db')
 
 class Source extends Model {
+    static async getAll() {
+        const source = await Source.findAll({
+            // 排序:[['属性',排序顺序]]
+            order: [
+                ['index', 'DESC']
+            ]
+        })
+        return source
+    }
 
 }
 

@@ -9,9 +9,9 @@
 ---|:--:
 获取最新课程|/source/getLatest
 获取全部课程|/sourece/getAll
-根据id获取课程详情|/source/getDetailById
+根据id获取课程详情|/source/getDetailById/:id
 获取所有课程种类|/source/getAlltype
-根据种类id获取课程|/source/getSourceByTypeId
+根据种类id获取课程|/source/getSourceByTypeId/:id
 根据用户获取学习的课程|/source/getMySource
 添加到我的课程|/source/addMySource
 删除我的课程|source/deleteMySource
