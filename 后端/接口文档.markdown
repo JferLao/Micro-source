@@ -21,10 +21,10 @@
 接口名称|api接口路径
 ---|:--:
 热门书籍清单|/book/hot_list
-书籍详情|/book/:id/detail
+书籍详情|/book/detail/:id
 书籍搜索|/book/search
 书籍点赞数|/book/favor/count
-详情书籍的点赞数|/book/:book_id/favor'
+详情书籍的点赞数|/book/favor/:book_id
 增加短评|/book/add/short_comment
 增加详情书籍的短评|/book/:bookId/short_comment
 热门搜索关键字|/book/hot_keyword
