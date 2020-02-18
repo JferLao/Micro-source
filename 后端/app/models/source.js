@@ -2,6 +2,7 @@ const { Sequelize, Model, Op } = require('sequelize')
 const { sequelize } = require('../../core/db')
 
 class Source extends Model {
+    // 获取全部课程
     static async getAll() {
         const source = await Source.findAll({
             // 排序:[['属性',排序顺序]]

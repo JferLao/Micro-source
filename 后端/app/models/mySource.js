@@ -52,6 +52,7 @@ class MySource extends Model {
         })
     }
 
+    // 获取课程
     static async getMySource(uid) {
         const { Source } = require('../models/source')
         const mine = await MySource.findAll({

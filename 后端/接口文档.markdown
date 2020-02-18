@@ -39,7 +39,7 @@ token验证|/token/verify
 注册接口|/user/register
 修改个人信息|/user/infonation
 关于我|/about
-帮助中心|/help
+
 
 ----
 
@@ -142,3 +142,62 @@ artId:图书的id
 
 
 # 课程类
+
+## /source/getAlltype
+>获取全部课程分类id和名称
+```
+不需要传递参数
+```
+
+## /source/getSourceByTypeId/:id
+>根据种类id获取课程
+```
+不需要传递参数,地址需要携带课程分类id
+```
+
+## /source/getAll
+>获取全部课程
+```
+不需要传递参数
+```
+
+## /source/getLatest
+>获取最新课程
+```
+start:1  //展示页数数
+count:3  //每页展示数
+```
+
+## /source/getDetailById/:id
+>根据id获取课程详情
+```
+不需要传递参数,地址需要携带课程分类id,需要携带小程序令牌
+```
+
+## /source/like
+>把课程加入到我的课表中
+```
+<!-- 需要携带小程序令牌 -->
+sourceId:1      //课程id
+```
+
+## /source/unlike
+>把课程从我的课表中移除
+```
+<!-- 需要携带小程序令牌 -->
+sourceId:1      //课程id
+```
+
+## /source/getMySource
+>获取我的课程
+```
+不需要传递参数,需要携带小程序令牌
+```
+
+
+# 关于我类
+
+## /about/getAbout/:id 
+```
+不需要传递参数,地址需要携带关于我的信息id
+```
