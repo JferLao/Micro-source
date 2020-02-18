@@ -54,6 +54,7 @@ router.post('/like', new Auth().m, async ctx => {
     success()
 })
 
+// 把课程从我的课表中移除
 router.post('/unlike', new Auth().m, async ctx => {
     const v = await new LikeValidator().validate(ctx, {
         id: 'sourceId'
@@ -63,10 +64,13 @@ router.post('/unlike', new Auth().m, async ctx => {
 })
 
 
-// 把课程从我的课表中移除
-
 //获取我的课程
-
+router.post('/getMySource', new Auth().m, async ctx => {
+    const mySource = await MySource.getMySource(ctx.auth.uid)
+    ctx.body = {
+        mySource
+    }
+})
 
 
 module.exports = router
