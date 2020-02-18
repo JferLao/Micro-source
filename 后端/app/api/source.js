@@ -5,6 +5,7 @@ const { PositiveIntegerValidator } = require('../validators/validator')
 const router = new Router({
     prefix: '/source'
 })
+const { GetLatest } = require('../validators/validator')
 const { Source } = require('../models/source')
 const { SourceType } = require('../models/sourceType')
 
@@ -26,6 +27,13 @@ router.post('/getSourceByTypeId/:id', async ctx => {
 // 获取全部课程
 router.post('/getAll', async ctx => {
     const source = await Source.getAll()
+    ctx.body = source
+})
+
+// 获取最新课程
+router.post('/getLatest', async ctx => {
+    const v = await new GetLatest().validate(ctx)
+    const source = await Source.getLatest(v.get('body.start'), v.get('body.count'))
     ctx.body = source
 })
 

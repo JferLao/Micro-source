@@ -12,6 +12,18 @@ class Source extends Model {
         return source
     }
 
+    static async getLatest(start, count) {
+        const source = await Source.findAll({
+            // 排序:[['属性',排序顺序]]
+            order: [
+                ['created_at', 'DESC']
+            ],
+            offset: (start - 1) * count,
+            limit: count
+        })
+        return source
+    }
+
 }
 
 Source.init({

@@ -137,6 +137,27 @@ class SearchValidator extends LinValidator {
     }
 }
 
+class GetLatest extends LinValidator {
+    constructor() {
+        super()
+        this.start = [
+            new Rule('isInt', '不符合规范', {
+                min: 0,
+                max: 60000
+            }),
+            new Rule('isOptional', '', 0)
+        ]
+        this.count = [
+            new Rule('isInt', '不符合规范', {
+                min: 1,
+                max: 20
+            }),
+            new Rule('isOptional', '', 20)
+        ]
+
+    }
+}
+
 class AddShortCommentValidator extends PositiveIntegerValidator {
     constructor() {
         super()
@@ -157,5 +178,6 @@ module.exports = {
     LikeValidator,
     ClassicValidator,
     SearchValidator,
-    AddShortCommentValidator
+    AddShortCommentValidator,
+    GetLatest
 }
