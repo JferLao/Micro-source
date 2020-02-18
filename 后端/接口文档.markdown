@@ -15,7 +15,6 @@
 根据用户获取学习的课程|/source/getMySource
 添加到我的课程|/source/addMySource
 删除我的课程|source/deleteMySource
-搜索课程|source/search
 
 ### 图书相关
 接口名称|api接口路径

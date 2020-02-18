@@ -6,9 +6,10 @@ const { flatten } = require('lodash')
 class Art {
     // 业务id和查询的种类
     constructor(artId) {
-            this.artId = artId
-        }
-        // 获取详情
+        this.artId = artId
+    }
+
+    // 获取详情
     async getDetail(uid) {
         // 局部导入防止模块循环
         const { Favor } = require('./favor')
@@ -25,27 +26,28 @@ class Art {
     }
 
     static async getList(artInfoList) {
-            // 每种类型放置
-            const artInfoObj = {
-                100: [],
-                200: [],
-                300: []
-            }
-            for (let artInfo of artInfoList) {
-                artInfoObj[artInfo.type].push(artInfo.art_id)
-            }
-            const arts = []
-            for (let key in artInfoObj) {
-                const ids = artInfoObj[key]
-                if (!ids.length) {
-                    continue
-                }
-                key = parseInt(key)
-                arts.push(await Art._getListByType(ids, key))
-            }
-            return flatten(arts)
+        // 每种类型放置
+        const artInfoObj = {
+            100: [],
+            200: [],
+            300: []
         }
-        // 私有方法
+        for (let artInfo of artInfoList) {
+            artInfoObj[artInfo.type].push(artInfo.art_id)
+        }
+        const arts = []
+        for (let key in artInfoObj) {
+            const ids = artInfoObj[key]
+            if (!ids.length) {
+                continue
+            }
+            key = parseInt(key)
+            arts.push(await Art._getListByType(ids, key))
+        }
+        return flatten(arts)
+    }
+
+    // 私有方法
     static async _getListByType(ids, type) {
         let arts = []
         const finder = {
@@ -85,6 +87,21 @@ class Art {
         if (!art) {
             art = await Book.create({
                 id: artId
+            })
+        }
+        return art
+    }
+
+    static async getSourceData(sourceId) {
+        const { Source } = require('../models/source')
+        let art = await Source.findOne({
+            where: {
+                id: sourceId
+            }
+        })
+        if (!art) {
+            art = await Source.create({
+                id: sourceId
             })
         }
         return art

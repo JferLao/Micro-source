@@ -12,6 +12,7 @@ class Source extends Model {
         return source
     }
 
+    // 获取最新课程(可分页)
     static async getLatest(start, count) {
         const source = await Source.findAll({
             // 排序:[['属性',排序顺序]]
@@ -23,6 +24,18 @@ class Source extends Model {
         })
         return source
     }
+
+    // 根据id获取课程详情
+    static async getSourceById(id) {
+        const source = await Source.findOne({
+            where: {
+                id
+            }
+        })
+        return source
+    }
+
+
 
 }
 
