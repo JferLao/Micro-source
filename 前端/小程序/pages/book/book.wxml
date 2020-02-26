@@ -1,2 +1,10 @@
-<!--pages/book/book.wxml-->
-<text>1</text>
+<view>
+    <view class="sub-container">
+    <image class="head-img" src="../../images/book/quality.png" />
+    <view class="books-container">
+      <block wx:for="{{books}}" wx:key="id">
+        <book-cmp book="{{item}}" class="book" />
+      </block>
+    </view>
+  </view> 
+</view>
