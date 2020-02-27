@@ -9,7 +9,8 @@ class WXManage {
     // 获取openid
     static async codeToToken(code) {
         // 拼接url地址
-        const url = util.format(global.config.wx.loginUrl, global.config.wx.appID, global.config.wx.appSecret, code)
+        const url = `https://api.weixin.qq.com/sns/jscode2session?appid=${global.config.wx.appID}&secret=${global.config.wx.appSecret}&js_code=${code}&grant_type=authorization_code`
+            // const url = util.format(global.config.wx.loginUrl, global.config.wx.appID, global.config.wx.appSecret, code)
             // 向腾讯地址发送请求
         const result = await axios.get(url)
         if (result.status !== 200) {

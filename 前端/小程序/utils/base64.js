@@ -20,9 +20,7 @@ class Base64 {
             } else if (isNaN(chr3)) {
                 enc4 = 64;
             }
-            output = output +
-                _keyStr.charAt(enc1) + _keyStr.charAt(enc2) +
-                _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+            output = output + this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) + this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
         }
         return output;
     }
@@ -33,10 +31,10 @@ class Base64 {
         var i = 0;
         input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
         while (i < input.length) {
-            enc1 = _keyStr.indexOf(input.charAt(i++));
-            enc2 = _keyStr.indexOf(input.charAt(i++));
-            enc3 = _keyStr.indexOf(input.charAt(i++));
-            enc4 = _keyStr.indexOf(input.charAt(i++));
+            enc1 = _this.keyStr.indexOf(input.charAt(i++));
+            enc2 = _this.keyStr.indexOf(input.charAt(i++));
+            enc3 = _this.keyStr.indexOf(input.charAt(i++));
+            enc4 = _this.keyStr.indexOf(input.charAt(i++));
             chr1 = (enc1 << 2) | (enc2 >> 4);
             chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
             chr3 = ((enc3 & 3) << 6) | enc4;

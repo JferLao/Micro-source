@@ -1,6 +1,8 @@
 import { config } from '../config/config'
 import { Base64 } from './base64'
-
+import { User } from './user'
+let base = new Base64()
+let user = new User()
 class HTTP {
     constructor() {
         this.baseRestUrl = config.api_url
@@ -48,8 +50,11 @@ class HTTP {
         }
         // token的解码
     static _encode() {
-        var token = wx.wx.getStorageSync('token')
-        const base64 = Base64(token + ':')
+        var token = wx.getStorageSync('token')
+        if (!token) {
+            token = user.login()
+        }
+        let base64 = base.encode(token + ':')
         return 'Basic ' + base64
 
     }

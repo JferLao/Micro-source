@@ -19,6 +19,15 @@ class BookModel extends HTTP {
         }
         this.request(params)
     }
+    getCommentById(id, success) {
+        var params = {
+            url: `book/short_comment/${id}`,
+            isAuth: true,
+            success
+        }
+        this.request(params)
+    }
+
 }
 
 

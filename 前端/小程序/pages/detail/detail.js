@@ -16,10 +16,17 @@ Page({
      */
     onLoad: function(options) {
         let bid = options.bid
+
+        // 获取书本详情
         bookModel.getBookDetail(bid, (data) => {
             this.setData({
                 book: data
             })
+        })
+
+        // 获取书本详情的短评
+        bookModel.getCommentById(bid, (data) => {
+            console.log(data);
         })
     },
 
