@@ -4,19 +4,18 @@
         <text class='title'>{{book.title}}</text>
         <text class='author'>{{book.author}}</text>
     </view>
-    <!--
     <view class="sub-container">
     <text class="headline">短评</text>
     <text class="shadow" wx:if="{{noComment}}">还没有短评</text>
     <view class="comment-container">
-      <block wx:for="{{util.limit(comments,15)}}">
+      <block wx:for="{{util.limit(comments,15)}}" wx:key="id">
         <tag-cmp class="tag" text="{{item.content}}">
           <text class="num" slot="after">{{'+' + item.nums}}</text>
         </tag-cmp>
       </block>
     </view>
   </view>
-  -->
+
   <view class="sub-container">
       <text class="headline">内容简介</text>
       <text decode="{{true}}" class="content">{{util.format(book.summary)}}</text>

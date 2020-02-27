@@ -8,7 +8,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        book: null
+        book: null,
+        comments: [],
+        noComment: true,
     },
 
     /**
@@ -27,6 +29,10 @@ Page({
         // 获取书本详情的短评
         bookModel.getCommentById(bid, (data) => {
             console.log(data);
+            this.setData({
+                noComment: data.comments == false ? true : false,
+                comments: data.comments
+            })
         })
     },
 
