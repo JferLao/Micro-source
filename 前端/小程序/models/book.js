@@ -11,6 +11,14 @@ class BookModel extends HTTP {
         }
         this.request(params)
     }
+
+    getBookDetail(id, success) {
+        var params = {
+            url: `book/detail/${id}`,
+            success
+        }
+        this.request(params)
+    }
 }
 
 

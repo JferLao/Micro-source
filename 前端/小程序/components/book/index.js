@@ -28,12 +28,12 @@ Component({
             console.log(this.properties.book);
         },
         onTap: function(event) {
-            // this.triggerEvent('booktap', {
-            //   bid:this.properties.book.id
-            // }, {})
-            // wx.navigateTo({
-            //   url: '../../pages/detail/detail?bid='+this.properties.book.id,
-            // })
+            this.triggerEvent('booktap', {
+                bid: this.properties.book.id
+            }, {})
+            wx.navigateTo({
+                url: '../../pages/detail/detail?bid=' + this.properties.book.id,
+            })
         }
     }
 })
