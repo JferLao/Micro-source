@@ -4,6 +4,7 @@ class BookModel extends HTTP {
         super()
     }
 
+    // 获取热搜
     getHotList(success) {
         var params = {
             url: 'book/getHotBookList',
@@ -12,6 +13,7 @@ class BookModel extends HTTP {
         this.request(params)
     }
 
+    // 获取书本详细信息
     getBookDetail(id, success) {
         var params = {
             url: `book/detail/${id}`,
@@ -19,14 +21,7 @@ class BookModel extends HTTP {
         }
         this.request(params)
     }
-    getCommentById(id, success) {
-        var params = {
-            url: `book/short_comment/${id}`,
-            isAuth: true,
-            success
-        }
-        this.request(params)
-    }
+
 
 }
 

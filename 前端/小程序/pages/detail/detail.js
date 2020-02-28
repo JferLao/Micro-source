@@ -1,8 +1,9 @@
 import { BookModel } from '../../models/book'
 import { LikeModel } from '../../models/like'
+import { CommentModel } from '../../models/comments'
 let bookModel = new BookModel
 let likeModel = new LikeModel
-
+let commentModel = new CommentModel
 Page({
 
     /**
@@ -31,7 +32,7 @@ Page({
         })
 
         // 获取书本详情的短评
-        bookModel.getCommentById(bid, (data) => {
+        commentModel.getComment(bid, (data) => {
             this.setData({
                 noComment: data.comments == false ? true : false,
                 comments: data.comments
@@ -40,7 +41,6 @@ Page({
 
         // 获取书籍的点赞数
         likeModel.getBookeStatus(bid, (data) => {
-
             this.setData({
                 like: data.likeStatus,
                 count: data.favNums
@@ -60,8 +60,32 @@ Page({
         })
     },
     // 确认输入的短评
-    onPost: function() {
-
+    onPost: function(event) {
+        let comment = event.detail.value || event.detail.text
+        if (!comment) {
+            return
+        }
+        if (comment.length > 12) {
+            wx.showToast({
+                title: '短评最多12个字',
+                icon: 'none'
+            })
+            return
+        }
+        commentModel.addComment(this.data.book.id, comment, (data) => {
+            wx.showToast({
+                title: '+ 1',
+                icon: "none"
+            })
+            this.data.comments.unshift({
+                content: comment,
+                nums: 1
+            })
+            this.setData({
+                comments: this.data.comments,
+                noComment: false
+            })
+        })
     },
     // 点赞
     onLike: function(event) {
