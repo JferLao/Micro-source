@@ -26,6 +26,7 @@
           <tag-cmp bind:tapping="onConfirm" wx:for="{{hotKeys}}"  text="{{item}}" />
         </view>
     </view>
+    
   </view>
   <view class="books-container" wx:if="{{finished}}">
     <block wx:for="{{dataArray}}" wx:key="{{item.id}}">
