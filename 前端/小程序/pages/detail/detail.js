@@ -1,6 +1,7 @@
 import { BookModel } from '../../models/book'
-
+import { LikeModel } from '../../models/like'
 let bookModel = new BookModel
+let likeModel = new LikeModel
 
 Page({
 
@@ -11,6 +12,9 @@ Page({
         book: null,
         comments: [],
         noComment: true,
+        posting: false,
+        like: false,
+        count: 0
     },
 
     /**
@@ -28,56 +32,43 @@ Page({
 
         // 获取书本详情的短评
         bookModel.getCommentById(bid, (data) => {
-            console.log(data);
             this.setData({
                 noComment: data.comments == false ? true : false,
                 comments: data.comments
             })
         })
+
+        // 获取书籍的点赞数
+        likeModel.getBookeStatus(bid, (data) => {
+
+            this.setData({
+                like: data.likeStatus,
+                count: data.favNums
+            })
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
+    // 展开输入框
+    onFakePost: function() {
+        this.setData({
+            posting: true
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
-
+    // 收起输入框
+    onCancel: function() {
+        this.setData({
+            posting: false
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
+    // 确认输入的短评
+    onPost: function() {
 
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
+    // 点赞
+    onLike: function(event) {
+        console.log(event.detail);
+        let status = event.detail.behavior
+        likeModel.like(status, this.data.book.id)
     },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
     /**
      * 用户点击右上角分享
      */
