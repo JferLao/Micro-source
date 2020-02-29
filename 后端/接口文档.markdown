@@ -88,7 +88,7 @@ token:token值
 参数:
 q:"东野圭吾" //查询的值
 start:1 //显示的页数
-count:10   //一页显示的条数
+count:20   //一页显示的条数()默认20
 ```
 
 ## /book/favor/count
