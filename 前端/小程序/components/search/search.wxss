@@ -45,6 +45,7 @@
   width: 14px;
   height: 14px;
   margin-right: 10px;
+  z-index:99;
 }
 
 .books-container {

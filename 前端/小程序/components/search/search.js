@@ -13,6 +13,7 @@ Component({
     properties: {
         more: {
             type: String,
+            // 监听加载到最底部时触发的函数
             observer: '_loadMore'
         }
     },
@@ -34,6 +35,7 @@ Component({
      */
     methods: {
         _loadMore: function() {
+            // 初始情况下不发送请求
             if (!this.data.q) {
                 return
             }
@@ -41,6 +43,7 @@ Component({
             if (!hasMore) {
                 return
             }
+            // 使用加载组件
             this.setData({
                 loading: true
             })
@@ -62,6 +65,7 @@ Component({
         onCancel: function(event) {
             this.triggerEvent('cancel', {}, {})
         },
+        // 取消搜索,关闭搜索内容
         onDelete: function(event) {
             console.log(123);
             this.setData({
