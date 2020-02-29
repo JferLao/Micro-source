@@ -39,7 +39,6 @@ Page({
     },
     // 上拉加载
     onReachBottom() {
-        console.log(123);
         this.setData({
             more: random(16)
         })
