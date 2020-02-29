@@ -58,6 +58,7 @@ Component({
                 }
             })
         },
+        // 触发取消事件,在页面接收
         onCancel: function(event) {
             this.triggerEvent('cancel', {}, {})
         },
@@ -69,8 +70,9 @@ Component({
                 q: ''
             })
         },
+
         onConfirm: function(event) {
-            // 首先切换状态，保持客户端流畅
+            // 首先切换状态，隐藏内容,保持客户端流畅
             this.setData({
                 finished: true,
                 loadingCenter: true
@@ -78,6 +80,7 @@ Component({
 
             this.initPagination()
 
+            // 获取输入关键词
             let q = event.detail.value || event.detail.text
 
             http.request({
@@ -99,11 +102,14 @@ Component({
             })
         }
     },
-    // 组件的生命周期
+    // 组件的生命周期,初始化时调用
     attached: function() {
+        // 绑定关键词
         this.setData({
             historyKeys: keyModel.getHistory()
         })
+
+        // 绑定热门关键词
         keyModel.getHot((data) => {
             this.setData({
                 hotKeys: data.hot
