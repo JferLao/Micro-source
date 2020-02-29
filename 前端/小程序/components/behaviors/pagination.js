@@ -1,55 +1,70 @@
-import {
-    HTTP
-} from '../../utils/http.js'
-
-let paginationBev = Behavior({
-    properties: {
-
-    },
+const paginationBev = Behavior({
     data: {
-        start: 0,
-        count: 20,
         dataArray: [], //分页不断加载的数据
-        empty: false,
-        ending: false
+        total: null, //总共数
+        noneResult: false, //没有结果
+        loading: false //锁的状态
     },
 
     methods: {
-        setMoreData: function(dataArray) {
-            if (dataArray == false) {
-                this.data.ending = true
-                if (this.data.dataArray == false) {
-                    this.setData({
-                        empty: true
-                    })
-                }
-            }
-            let temp = this.data.dataArray.concat(dataArray)
-            this.data.start += this.data.count
+        // 合并新的数据到之间的数据中
+        setMoreData(dataArray) {
+            // 合并数据
+            const tempArray = this.data.dataArray.concat(dataArray)
             this.setData({
-                dataArray: temp
+                dataArray: tempArray
             })
-            return true
         },
 
+        // 是否还有更多数据需要加载
         hasMore: function() {
-            return !this.data.ending
+            if (this.data.dataArray.length >= this.data.total) {
+                return false
+            } else {
+                return true
+            }
+        },
+
+        // 设置数据总数
+        setTotal(total) {
+            this.data.total = total
+            if (total == 0) {
+                this.setData({
+                    noneResult: true
+                })
+            }
         },
 
         // 获取分页数
         getCurrentStart: function() {
-            return this.data.start
+            return this.data.dataArray.length
         },
 
         // 清空数据
         initPagination: function() {
-            this.data.ending = false
-            this.data.start = 0
-            this.data.dataArray = []
             this.setData({
-                dataArray: []
+                dataArray: [],
+                noneResult: false,
+                loading: false
             })
-        }
+            this.data.total = null
+        },
+        // 判断是否锁状态
+        isLocked() {
+            return this.data.loading ? true : false
+        },
+        // 请求上锁
+        locked() {
+            this.setData({
+                loading: true
+            })
+        },
+        // 请求解锁
+        unLocked() {
+            this.setData({
+                loading: false
+            })
+        },
     }
 })
 

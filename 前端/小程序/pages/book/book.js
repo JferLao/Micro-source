@@ -1,4 +1,7 @@
 import { BookModel } from '../../models/book'
+import {
+    random
+} from '../../utils/util'
 let bookModel = new BookModel()
 Page({
 
@@ -8,7 +11,7 @@ Page({
     data: {
         searchPanel: false,
         books: Object,
-        more: false
+        more: ''
     },
 
     /**
@@ -34,5 +37,12 @@ Page({
             searchPanel: false
         })
     },
+    // 上拉加载
+    onReachBottom() {
+        console.log(123);
+        this.setData({
+            more: random(16)
+        })
+    }
 
 })

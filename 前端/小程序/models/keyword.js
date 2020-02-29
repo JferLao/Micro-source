@@ -1,28 +1,37 @@
+import { HTTP_P } from '../utils/http-p'
 
-class KeywordStorage{
-  constructor(){
-    this.key = 'q'
-  }
-
-  all(){
-    var keywords = wx.getStorageSync(this.key)
-    return keywords
-  }
-
-  add(word){
-    var keywords = this.all()
-    if (keywords){
-      var index = keywords.indexOf(word)
-      if(index == -1){
-        keywords = keywords.push(word)
-      }
-      wx.setStorageSync(this.key, keywords)
+class KeywordModel extends HTTP_P {
+    key = 'q'
+    maxLength = 10
+    getHistory() {
+        const words = wx.getStorageSync(this.key)
+        if (!words) {
+            return []
+        }
+        return words
     }
-    else{
-      keywords = [word]
-      wx.setStorageSync(this.key, keywords)
+
+    getHot() {
+        return this.request({
+            url: 'book/hot_keyword'
+        })
     }
-  }
+
+    addToHistory(keyword) {
+        let words = this.getHistory()
+        const has = words.includes(keyword)
+            // 队列 栈
+        if (!has) {
+            // 数组末尾 删除 ， keyword 数组第一位
+            const length = words.length
+            if (length >= this.maxLength) {
+                words.pop()
+            }
+            words.unshift(keyword)
+            wx.setStorageSync(this.key, words)
+        }
+    }
+
 }
 
-export { KeywordStorage}
+export { KeywordModel }

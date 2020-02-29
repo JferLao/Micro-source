@@ -1,4 +1,5 @@
 import { HTTP } from '../utils/http'
+import { HTTP_P } from '../utils/http-p'
 class BookModel extends HTTP {
     constructor() {
         super()
@@ -23,7 +24,24 @@ class BookModel extends HTTP {
     }
 
 
+
 }
 
+class Book_PModel extends HTTP_P {
+    constructor() {
+            super()
+        }
+        // 获取搜索数据
+    search(start, q) {
+        return this.request({
+            url: 'book/search',
+            data: {
+                q: q,
+                start: start,
+                count: 20
+            }
+        })
+    }
+}
 
-export { BookModel }
+export { BookModel, Book_PModel }
