@@ -197,7 +197,7 @@ sourceId:1      //课程id
 
 # 关于我类
 
-## /about/getAbout/:id 
+## /about/getAbout
 ```
-不需要传递参数,地址需要携带关于我的信息id
+不需要传递参数
 ```

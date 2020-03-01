@@ -5,9 +5,9 @@ const router = new Router({
 const { PositiveIntegerValidator } = require('../validators/validator')
 const { About } = require('../models/about')
 
-router.post('/getAbout/:id', async ctx => {
-    const v = await new PositiveIntegerValidator().validate(ctx)
-    const res = await About.getContentById(v.get('path.id'))
+router.post('/getAbout', async ctx => {
+    // const v = await new PositiveIntegerValidator().validate(ctx)
+    const res = await About.getContentById()
     ctx.body = {
         res
     }

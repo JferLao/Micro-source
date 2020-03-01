@@ -5,7 +5,7 @@ class Mine extends HTTP_P {
         super()
     }
 
-    // 获取关于我的信息
+    // 获取关于我的最新信息
     getAbout() {
         return this.request({
             url: 'about/getAbout'

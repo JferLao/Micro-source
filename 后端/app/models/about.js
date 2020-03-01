@@ -2,11 +2,11 @@ const { Sequelize, Model, Op } = require('sequelize')
 const { sequelize } = require('../../core/db')
 
 class About extends Model {
-    static async getContentById(id) {
+    static async getContentById() {
         const content = await About.findOne({
-            where: {
-                id
-            }
+            order: [
+                ['created_at', 'DESC']
+            ]
         })
         return content
     }
