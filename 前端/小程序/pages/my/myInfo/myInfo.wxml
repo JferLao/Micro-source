@@ -1,6 +1,6 @@
 <view>
   <view class="list_content">
-
     <list title="{{name}}" info="{{info}}" isItem_2="true"></list>
+    <list title="{{avaName}}" icon="{{icon}}" isItem_3="true"></list>
   </view>
 </view>
