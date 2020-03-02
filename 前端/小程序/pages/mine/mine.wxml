@@ -1,3 +1,24 @@
-<view>
-    
+<view >
+    <view class="head_content" >
+        <view class="user_content" >
+            <view class="user_image_content" >
+                <image class="icon_image" src="{{userInfo.avatarUrl}}" ></image>
+            </view>
+            <view class="user_name_content" >
+                <text class="name_title" >{{userInfo.nickName}}</text>
+            </view>
+            <view class="message_content" >
+                <image class="message_image" src="../../images/my/xiaoxi.png" ></image>
+            </view>  
+        </view>
+    </view>
+    <view class="content">
+        <view class="list_content" >
+            <block wx:for="{{list}}" wx:key="index" class="list_item">
+                <list  title="{{item.title}}" link="item.url"></list>
+            </block>
+        </view>
+    </view>
+  
+
 </view>

@@ -5,15 +5,28 @@ Page({
      * 页面的初始数据
      */
     data: {
-        title: '测试',
-        link: 'api'
+        list: [
+            { title: '个人信息', link: '/' },
+            { title: '我的课程', link: '/' },
+            { title: '喜欢的图书', link: '/' },
+            { title: '帮助中心', link: '/' },
+            { title: '关于我', link: '/' },
+        ],
+        userInfo: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        wx.getUserInfo({
+            success: data => {
+                console.log(data.userInfo);
+                this.setData({
+                    userInfo: data.userInfo
+                })
+            }
+        })
     },
 
     /**

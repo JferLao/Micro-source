@@ -1,9 +1,11 @@
+
 .cells {
 	position: relative;
 	margin-top: 8px;
 	background-color: #fff;
 	line-height: 1.41176471;
-	font-size: 17px
+	font-size: 17px;
+  /* border-radius: 14rpx 14rpx 0 0; */
 }
 
 .cells:before {

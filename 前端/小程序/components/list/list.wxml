@@ -1,6 +1,8 @@
-<view class="cells cells_after-title">
-    <navigator url="{{link}}" class="cell cell_access" hover-class="cell_active">
+<view class="list_content" >
+    <view class="cells cells_after-title">
+    <navigator url="{{link}}" class="cell cell_access" >
         <view class="cell__bd">{{title}}</view>
         <view class="cell__ft cell__ft_in-access"></view>
     </navigator>
  </view>
+</view>
