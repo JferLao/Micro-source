@@ -9,8 +9,8 @@ Page({
             { title: '个人信息', link: '/pages/my/myInfo/myInfo' },
             { title: '我的课程', link: '/pages/my/myInfo/myInfo' },
             { title: '喜欢的图书', link: '/pages/my/myInfo/myInfo' },
-            { title: '帮助中心', link: '/pages/my/myInfo/myInfo' },
-            { title: '关于我', link: '/pages/my/myInfo/myInfo' },
+            { title: '帮助中心', link: '/pages/my/help/help' },
+            { title: '关于我', link: '/pages/my/me/me' },
         ],
         userInfo: {}
     },
