@@ -5,10 +5,17 @@ Component({
      */
     properties: {
         title: String,
-        link: String
-
+        link: String,
+        isItem_1: {
+            type: Boolean,
+            value: false
+        },
+        isItem_2: {
+            type: Boolean,
+            value: false
+        },
+        info:String
     },
-
     /**
      * 组件的初始数据
      */

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/book/book",
     "pages/mine/mine",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/my/myInfo/myInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -15,7 +15,7 @@
     <view class="content">
         <view class="list_content" >
             <block wx:for="{{list}}" wx:key="index" class="list_item">
-                <list  title="{{item.title}}" link="item.url"></list>
+                <list  title="{{item.title}}" link="{{item.link}}" isItem_1="true"></list>
             </block>
         </view>
     </view>
