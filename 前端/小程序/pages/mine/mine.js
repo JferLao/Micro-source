@@ -15,7 +15,7 @@ Page({
             },
             {
                 title: '喜欢的图书',
-              link: '/pages/my/favorBook/favorBook'
+                link: '/pages/my/favorBook/favorBook'
             },
             {
                 title: '关于我',
@@ -32,7 +32,6 @@ Page({
         // 判断是否授权过
         wx.getSetting({
             success: (res) => {
-                console.log(res)
                 if (res.authSetting['scope.userInfo']) {
                     wx.getUserInfo({
                         success: data => {

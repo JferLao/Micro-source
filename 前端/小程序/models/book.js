@@ -23,8 +23,21 @@ class BookModel extends HTTP {
         this.request(params)
     }
 
+    //获取点赞图书
+    getFavor(success) {
+        var params = {
+            url: 'book/favor/myfavor',
+            isAuth: true,
+            success
+        }
+        this.request(params)
+    }
 
+    // 获取我喜欢的图书
+    getMyFavorBook(success) {
+        let r = this.getFavor(success)
 
+    }
 }
 
 class Book_PModel extends HTTP_P {
