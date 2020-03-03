@@ -37,6 +37,15 @@ router.post('/favor/count', new Auth().m, async ctx => {
     }
 })
 
+// 获取我喜欢的书籍
+router.post('/favor/myfavor', new Auth().m, async ctx => {
+    const book = await Book.getMyFavorBook(ctx.auth.uid)
+    ctx.body = {
+        book
+    }
+})
+
+
 //获取书本的点赞
 router.post('/favor/:bookId', new Auth().m, async ctx => {
     const v = await new PositiveIntegerValidator().validate(ctx, {

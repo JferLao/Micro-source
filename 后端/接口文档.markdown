@@ -23,6 +23,7 @@
 书籍详情|/book/detail/:id
 书籍搜索|/book/search
 书籍点赞数|/book/favor/count
+我喜欢的书籍|/book/favor/myfavor
 详情书籍的点赞数|/book/favor/:book_id
 增加短评|/book/add/short_comment
 增加详情书籍的短评|/book/:bookId/short_comment
@@ -103,6 +104,13 @@ count:20   //一页显示的条数()默认20
 ```
 <!-- 不需要参数,需要携带小程序令牌 -->
 ```
+
+## /book/favor/myfavor
+>获取我喜欢的图书
+```
+<!-- 不需要参数,需要携带小程序令牌 -->
+```
+
 
 ## /book/add/short_comment
 >添加短评

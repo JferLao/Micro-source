@@ -15,7 +15,7 @@ Page({
             },
             {
                 title: '喜欢的图书',
-                link: '/pages/my/myInfo/myInfo'
+              link: '/pages/my/favorBook/favorBook'
             },
             {
                 title: '关于我',

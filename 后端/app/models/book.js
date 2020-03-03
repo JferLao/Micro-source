@@ -34,6 +34,16 @@ class Book extends Model {
         })
         return count
     }
+
+    //获取喜欢的书籍
+    static async getMyFavorBook(uid) {
+        const book = await Favor.findAll({
+            where: {
+                uid
+            }
+        })
+        return book
+    }
 }
 
 Book.init({
