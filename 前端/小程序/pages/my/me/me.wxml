@@ -1,2 +1,5 @@
-<!--pages/my/me/me.wxml-->
-<text>pages/my/me/me.wxml</text>
+<view class="me_content">
+    <image class="image" src="../../../images/my/me.png" >
+        
+    </image>
+</view>
