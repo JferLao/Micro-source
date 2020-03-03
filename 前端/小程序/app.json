@@ -1,45 +1,44 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/book/book",
-    "pages/mine/mine",
-    "pages/detail/detail",
-    "pages/my/myInfo/myInfo",
-    "pages/my/help/help",
-    "pages/my/me/me"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#23DB85",
-    "navigationBarTitleText": "Fer微课程",
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "default"
-  },
-  "tabBar": {
-    "borderStyle": "black",
-    "selectedColor": "#23DB85",
-    "backgroundColor": "#ffffff",
-    "color": "#333",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "selectedIconPath": "./images/tab/index_select.png",
-        "iconPath": "./images/tab/index.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/book/book",
-        "selectedIconPath": "./images/tab/book_select.png",
-        "iconPath": "./images/tab/book.png",
-        "text": "图书"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "selectedIconPath": "/images/tab/mine_select.png",
-        "iconPath": "/images/tab/mine.png",
-        "text": "个人中心"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap90.json"
+    "pages": [
+        "pages/index/index",
+        "pages/book/book",
+        "pages/mine/mine",
+        "pages/detail/detail",
+        "pages/my/myInfo/myInfo",
+        "pages/my/me/me",
+        "pages/login/login"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#23DB85",
+        "navigationBarTitleText": "Fer微课程",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "default"
+    },
+    "tabBar": {
+        "borderStyle": "black",
+        "selectedColor": "#23DB85",
+        "backgroundColor": "#ffffff",
+        "color": "#333",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "selectedIconPath": "./images/tab/index_select.png",
+                "iconPath": "./images/tab/index.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/book/book",
+                "selectedIconPath": "./images/tab/book_select.png",
+                "iconPath": "./images/tab/book.png",
+                "text": "图书"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "selectedIconPath": "/images/tab/mine_select.png",
+                "iconPath": "/images/tab/mine.png",
+                "text": "个人中心"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap90.json"
 }

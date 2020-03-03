@@ -5,12 +5,22 @@ Page({
      * 页面的初始数据
      */
     data: {
-        list: [
-            { title: '个人信息', link: '/pages/my/myInfo/myInfo' },
-            { title: '我的课程', link: '/pages/my/myInfo/myInfo' },
-            { title: '喜欢的图书', link: '/pages/my/myInfo/myInfo' },
-            { title: '帮助中心', link: '/pages/my/help/help' },
-            { title: '关于我', link: '/pages/my/me/me' },
+        list: [{
+                title: '个人信息',
+                link: '/pages/my/myInfo/myInfo'
+            },
+            {
+                title: '我的课程',
+                link: '/pages/my/myInfo/myInfo'
+            },
+            {
+                title: '喜欢的图书',
+                link: '/pages/my/myInfo/myInfo'
+            },
+            {
+                title: '关于我',
+                link: '/pages/my/me/me'
+            },
         ],
         userInfo: {}
     },
@@ -19,62 +29,27 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        wx.getUserInfo({
-            success: data => {
-                console.log(data.userInfo);
-                this.setData({
-                    userInfo: data.userInfo
-                })
+        // 判断是否授权过
+        wx.getSetting({
+            success: (res) => {
+                console.log(res)
+                if (res.authSetting['scope.userInfo']) {
+                    wx.getUserInfo({
+                        success: data => {
+                            this.setData({
+                                userInfo: data.userInfo
+                            })
+                        }
+                    })
+                } else {
+                    wx.reLaunch({
+                        url: "../login/login"
+                    })
+                }
             }
         })
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
 
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
 
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {
-
-    }
 })

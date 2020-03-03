@@ -1,0 +1,18 @@
+<view class="container wx-login">
+  <view class="wx-login__logo">
+    <view class="logo" hover-class="none" hover-stop-propagation="false">
+      <image class="" src="../../images/source.png" mode="aspectFit">
+      </image>
+    </view>
+    <view class="wx-login__name">Fer微课程</view>
+  </view>
+  <view class="content" hover-class="none" hover-stop-propagation="false">
+    <view class="content__info">登录后开发者将获得以下权限</view>
+    <view class="content__detail">
+      <text class="spot"></text>
+      <text>获得你的公开信息（昵称、头像等）</text>
+    </view>
+  </view>
+
+  <button class="wx-login__button" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">授权登录</button>
+</view>
