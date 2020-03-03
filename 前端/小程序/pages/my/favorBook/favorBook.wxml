@@ -1,5 +1,9 @@
 <view>
   <block wx:for="{{booklist}}" wx:key="item">
-      
+      <bookItem bookImage="{{item.image}}"
+        bookName="{{item.title}}"
+        author="{{item.author[0]}}"
+        book="{{item}}"
+        bindselectBook="selectBook" ></bookItem>
   </block>
 </view>

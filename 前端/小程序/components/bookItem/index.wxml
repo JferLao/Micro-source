@@ -1,2 +1,12 @@
-<!--components/bookItem/index.wxml-->
-<text>components/bookItem/index.wxml</text>
+<view class="item_content" bindtap="onSelect">
+    <view class="image_content" >
+        <image class="image_b" src="{{bookImage}}"></image>
+    </view>
+    <view class="title_content">
+        <text class="book">{{bookName}}</text>
+        <text class="author">{{author}}</text>
+    </view>
+    <view class="favor_content">
+      <image src="../like/images/like.png"></image>
+    </view>
+</view>

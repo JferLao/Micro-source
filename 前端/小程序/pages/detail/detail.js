@@ -23,7 +23,7 @@ Page({
      */
     onLoad: function(options) {
         let bid = options.bid
-
+        
         // 获取书本详情
         bookModel.getBookDetail(bid, (data) => {
             this.setData({
