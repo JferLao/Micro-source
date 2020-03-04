@@ -1,0 +1,10 @@
+.container{
+  overflow: hidden;
+}
+/* 使用固定高度防止圆点外走 */
+.container swiper{
+  height: 200px;   
+}
+.swiper-item-pic{
+  width: 100%;
+}
