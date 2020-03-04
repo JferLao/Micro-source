@@ -19,10 +19,13 @@ Page({
     // 获取轮播图
     getBanner: function() {
         bannerModel.getBannerPic().then((res) => {
-            console.log(res.banner);
             this.setData({
                 banner: res.banner
             })
         })
     },
+    // 查看更多
+    onMore() {
+
+    }
 })

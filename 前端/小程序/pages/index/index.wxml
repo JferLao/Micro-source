@@ -1,3 +1,9 @@
 <view class="index_content">
   <banner banner="{{banner}}"></banner>
+  <view class="source_content">
+      <view class="title_content">
+        <text class="text">最新课程</text>
+        <text class="more" bindtap = "onMore">查看更多 ></text>
+      </view>
+  </view>
 </view>
