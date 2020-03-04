@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "banner": "../../components/banner/index"
+        "banner": "../../components/banner/index",
+        "source": "../../components/source-item"
     }
 }

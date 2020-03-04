@@ -1,0 +1,22 @@
+<view class="source_item_content" >
+    <view class="image_content">
+        <image class="image_content_pic" src="{{source.image}}">
+            
+        </image>
+    </view>
+    <view class="info_content">
+        <view class="title_content">
+            <text class="title">
+                {{source.name}}
+            </text>
+        </view>
+        <view class="nums_content">
+            <text class="stuNums" >
+                {{source.stuNum}}
+            </text>
+            <text class="nums">
+            人正在学习
+            </text>
+        </view>
+    </view>
+</view>

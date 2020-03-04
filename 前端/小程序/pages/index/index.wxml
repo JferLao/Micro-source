@@ -5,5 +5,10 @@
         <text class="text">最新课程</text>
         <text class="more" bindtap = "onMore">查看更多 ></text>
       </view>
+      <view class="source_content">
+        <block wx:for="{{source}}" wx:key="id">
+          <source source="{{item}}"></source>
+        </block>
+      </view>
   </view>
 </view>

@@ -1,4 +1,6 @@
 import { BannerModel } from '../../models/banner'
+import { SourceModel } from '../../models/source'
+const sourceModel = new SourceModel()
 const bannerModel = new BannerModel()
 Page({
 
@@ -6,7 +8,10 @@ Page({
      * 页面的初始数据
      */
     data: {
-        banner: {}
+        banner: {},
+        start: 1,
+        count: 5,
+        source: []
     },
 
     /**
@@ -14,6 +19,7 @@ Page({
      */
     onLoad: function(options) {
         this.getBanner()
+        this.getLatestSource()
     },
 
     // 获取轮播图
@@ -24,6 +30,16 @@ Page({
             })
         })
     },
+    // 获取最新课程
+    getLatestSource: function() {
+        sourceModel.getLatestSource(this.data.start, this.data.count, (res) => {
+            this.setData({
+                source: res.source
+            })
+            console.log(this.data.source);
+        })
+    },
+
     // 查看更多
     onMore() {
 
