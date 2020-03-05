@@ -3,12 +3,12 @@
   <view class="search_content">
         <view class="search-view">
             <image class="icon" src="../../components/search/images/search.png" />
-            <input value="{{q}}"  placeholder-class='in-bar' placeholder='课程名' class='bar' auto-focus="false" />
+            <input value="{{key}}" bind:confirm="onConfirm"  placeholder-class='in-bar' placeholder='课程名' class='bar' auto-focus="false" />
         </view>
   </view>
   <!--左侧栏-->
   <view class="nav_left">
-    <block wx:for="{{type}}">
+    <block wx:for="{{type}}" wx:key="id">
       <!--当前项的id等于item项的id，那个就是当前状态-->
       <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
       <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
@@ -18,7 +18,7 @@
   <view class="nav_right">
     <!--如果有数据，才遍历项-->
     <view wx:if="{{source}}">
-      <block wx:for="{{source}}">
+      <block wx:for="{{source}}" wx:key="id">
         <view class="nav_right_items">
           <navigator url="">
             <!--用view包裹图片组合，如果有图片就用，无图片提供就使用50x30的这个默认图片-->

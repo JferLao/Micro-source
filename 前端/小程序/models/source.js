@@ -49,7 +49,9 @@ class SourceModel extends HTTP {
     search(key, success) {
         var params = {
             url: 'source/search',
-            key,
+            data: {
+                key
+            },
             success
         }
         this.request(params)

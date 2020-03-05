@@ -22,12 +22,22 @@ Page({
 
     // 获取全部课程分类
     onGetType() {
-        sourceModel.getAllType((res) => {
-            let data = res.type
+        // 缓存分类
+        let typeStorage = wx.getStorageSync('soureType')
+        if (typeStorage) {
             this.setData({
-                type: data
+                type: typeStorage
             })
-        })
+        } else {
+            sourceModel.getAllType((res) => {
+                let data = res.type
+                wx.setStorageSync('soureType', data)
+                this.setData({
+                    type: data
+                })
+            })
+        }
+
     },
 
     // 获取全部课程
@@ -41,11 +51,33 @@ Page({
 
     // 根据课程id获取课程
     onGetSourceByTypeId(id) {
+        // wx.showLoading({
+        //     title: '搜索中',
+        // })
         sourceModel.getSourceByTypeId(id, (res) => {
+            // wx.hideLoading()
             this.setData({
                 source: res.type
             })
         })
+    },
+
+
+
+    //搜索
+    onSearch(key) {
+        wx.showLoading({
+            title: '搜索中',
+        })
+        sourceModel.search(key, (data) => {
+            wx.hideLoading()
+            console.log(data);
+        })
+    },
+
+    onConfirm(event) {
+        let key = event.detail.value
+        this.onSearch(key)
     },
 
     //事件处理函数
