@@ -8,7 +8,8 @@
     "pages/my/me/me",
     "pages/login/login",
     "pages/my/favorBook/favorBook",
-    "pages/soureMenu/sourceMenu"
+    "pages/soureMenu/sourceMenu",
+    "pages/sourceDetail/sourceDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

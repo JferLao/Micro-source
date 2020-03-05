@@ -41,8 +41,18 @@ Page({
 
     // 查看更多
     onMore() {
-      wx.navigateTo({
+        wx.navigateTo({
             url: '../soureMenu/sourceMenu'
         })
+    },
+
+    // 查看课程
+    enterSource(event) {
+        if (event.detail.source.id) {
+            let id = event.detail.source.id
+            wx.navigateTo({
+                url: '../sourceDetail/sourceDetail?sourceId=' + id
+            })
+        }
     }
 })

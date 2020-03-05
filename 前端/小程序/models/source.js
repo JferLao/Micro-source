@@ -57,6 +57,16 @@ class SourceModel extends HTTP {
         this.request(params)
     }
 
+    //根据id获取课程详情
+    getSourceById(id, success) {
+        var params = {
+            url: `source/getDetailById/${id}`,
+            isAuth: true,
+            success
+        }
+        this.request(params)
+    }
+
 }
 export {
     SourceModel

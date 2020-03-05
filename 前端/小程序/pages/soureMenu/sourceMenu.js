@@ -72,12 +72,36 @@ Page({
         sourceModel.search(key, (data) => {
             wx.hideLoading()
             console.log(data);
+            if (!data.source.length) {
+                wx.showToast({
+                    title: '没有找到课程喔',
+                    icon: 'success',
+                    duration: 2000,
+                    image: '../../images/icon/tips.png'
+                })
+            } else {
+                let id = data.source
+                wx.navigateTo({
+                    url: '../sourceDetail/sourceDetail?sourceId=' + id
+                })
+            }
         })
     },
 
+    // 确认搜索
     onConfirm(event) {
         let key = event.detail.value
         this.onSearch(key)
+    },
+
+    enterSource(event) {
+        console.log(event.currentTarget.dataset.id);
+        if (event.currentTarget.dataset.id) {
+            let id = event.currentTarget.dataset.id
+            wx.navigateTo({
+                url: '../sourceDetail/sourceDetail?sourceId=' + id
+            })
+        }
     },
 
     //事件处理函数

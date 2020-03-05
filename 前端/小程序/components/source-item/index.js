@@ -21,6 +21,10 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        OnSource() {
+            this.triggerEvent('enterSource', {
+                source: this.properties.source
+            })
+        }
     }
 })
