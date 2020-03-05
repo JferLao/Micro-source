@@ -141,10 +141,10 @@ class SourceValidator extends LinValidator {
     constructor() {
         super()
         this.key = [
-            new Rule('isLength', '搜索关键词不能为空', {
-                min: 1,
-                max: 20
-            })
+            // new Rule('isLength', '搜索关键词不能为空', {
+            //     min: 1,
+            //     max: 20
+            // })
         ]
     }
 }

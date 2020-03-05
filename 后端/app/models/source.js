@@ -38,12 +38,14 @@ class Source extends Model {
 
     // 搜索课程
     static async search(name) {
-        const source = await Source.findAll({
+        const source = await Source.findOne({
             where: {
-                name: {
+                name: name
+                    // {
                     // 模糊查询
-                    [Op.like]: '%' + name + '%'
-                }
+                    // [Op.like]: '%' + name + '%'
+
+                // }
             }
         })
         return source

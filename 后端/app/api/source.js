@@ -74,7 +74,9 @@ router.post('/getMySource', new Auth().m, async ctx => {
 
 // 搜索课程
 router.post('/search', async ctx => {
-    const v = await new SourceValidator().validate(ctx)
+    const v = await new SourceValidator().validate(ctx, {
+        key: 'key'
+    })
     const source = await Source.search(v.get('body.key'))
     ctx.body = {
         source
