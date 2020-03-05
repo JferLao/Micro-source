@@ -36,6 +36,18 @@ class Source extends Model {
         return source
     }
 
+    // 搜索课程
+    static async search(name) {
+        const source = await Source.findAll({
+            where: {
+                name: {
+                    // 模糊查询
+                    [Op.like]: '%' + name + '%'
+                }
+            }
+        })
+        return source
+    }
 
 
 }

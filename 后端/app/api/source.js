@@ -1,7 +1,7 @@
 const Router = require('koa-router')
 const { Auth } = require('../../middlewares/auth')
 const { success } = require('../lib/helper')
-const { PositiveIntegerValidator, LikeValidator } = require('../validators/validator')
+const { PositiveIntegerValidator, LikeValidator, SourceValidator } = require('../validators/validator')
 const router = new Router({
     prefix: '/source'
 })
@@ -69,6 +69,15 @@ router.post('/getMySource', new Auth().m, async ctx => {
     const mySource = await MySource.getMySource(ctx.auth.uid)
     ctx.body = {
         mySource
+    }
+})
+
+// 搜索课程
+router.post('/search', async ctx => {
+    const v = await new SourceValidator().validate(ctx)
+    const source = await Source.search(v.get('body.key'))
+    ctx.body = {
+        source
     }
 })
 

@@ -36,12 +36,13 @@ Page({
             this.setData({
                 source: res.source
             })
-            console.log(this.data.source);
         })
     },
 
     // 查看更多
     onMore() {
-
+      wx.navigateTo({
+            url: '../soureMenu/sourceMenu'
+        })
     }
 })
