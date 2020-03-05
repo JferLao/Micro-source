@@ -71,8 +71,7 @@ Page({
         })
         sourceModel.search(key, (data) => {
             wx.hideLoading()
-            console.log(data);
-            if (!data.source.length) {
+            if (!data.source) {
                 wx.showToast({
                     title: '没有找到课程喔',
                     icon: 'success',
@@ -80,10 +79,12 @@ Page({
                     image: '../../images/icon/tips.png'
                 })
             } else {
-                let id = data.source
-                wx.navigateTo({
-                    url: '../sourceDetail/sourceDetail?sourceId=' + id
-                })
+                if (data.source.id) {
+                    let id = data.source.id
+                    wx.navigateTo({
+                        url: '../sourceDetail/sourceDetail?sourceId=' + id
+                    })
+                }
             }
         })
     },

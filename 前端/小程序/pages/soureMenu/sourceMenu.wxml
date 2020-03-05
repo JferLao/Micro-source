@@ -3,7 +3,7 @@
   <view class="search_content">
         <view class="search-view">
             <image class="icon" src="../../components/search/images/search.png" />
-            <input value="{{key}}" bind:confirm="onConfirm"  placeholder-class='in-bar' placeholder='课程名' class='bar' auto-focus="false" />
+            <input value="{{key}}" bind:confirm="onConfirm"  placeholder-class='in-bar' placeholder='完整课程名' class='bar' auto-focus="false" />
         </view>
   </view>
   <!--左侧栏-->
