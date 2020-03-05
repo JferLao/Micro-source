@@ -15,7 +15,7 @@ Component({
     },
     attached: function() {
         // 在组件实例进入页面节点树时执行
-        console.log(this.properties.source);
+
     },
     /**
      * 组件的方法列表
