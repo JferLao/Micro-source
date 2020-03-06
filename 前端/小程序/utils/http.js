@@ -33,7 +33,6 @@ class HTTP {
                 method: params.method,
                 // 对完成请求进行处理
                 success: (res) => {
-                    console.log(res);
                     // 判断以2（2xx)开头的状态码为正确
                     // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
                     var code = res.statusCode.toString();

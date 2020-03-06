@@ -1,2 +1,5 @@
-<!--pages/sourceDetail/sourceDetail.wxml-->
-<text>pages/sourceDetail/sourceDetail.wxml</text>
+<view class="container">
+    <view class="video_content">
+        <video-cmp video="{{source}}"></video-cmp>
+    </view>
+</view>

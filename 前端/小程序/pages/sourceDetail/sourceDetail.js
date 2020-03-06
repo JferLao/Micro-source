@@ -6,20 +6,24 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        source: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        console.log(options);
+        let id = options.sourceId
+        this.onGetSource(id)
     },
 
     // 获取课程内容
     onGetSource(id) {
         sourceModel.getSourceById(id, (res) => {
-            console.log(res);
+            let data = res.source
+            this.setData({
+                source: data
+            })
         })
     }
 
