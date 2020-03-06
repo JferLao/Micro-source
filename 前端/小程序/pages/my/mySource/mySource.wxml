@@ -1,2 +1,12 @@
-<!--pages/my/mySource/mySource.wxml-->
-<text>pages/my/mySource/mySource.wxml</text>
+<view class="container">
+    <view class="source_content">
+    <view class="title_content">
+      <text class="text">我的课程</text>
+    </view>
+    <view class="source_content">
+      <block wx:for="{{source}}" wx:key="id">
+        <source source="{{item}}" bind:enterSource="enterSource"></source>
+      </block>
+    </view>
+  </view>
+</view>
