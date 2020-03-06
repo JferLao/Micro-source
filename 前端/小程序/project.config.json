@@ -78,9 +78,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/soureMenu/sourceMenu",
-					"pathName": "pages/soureMenu/sourceMenu",
+					"id": 3,
+					"name": "pages/my/mySource/mySource",
+					"pathName": "pages/my/mySource/mySource",
 					"query": "",
 					"scene": null
 				}

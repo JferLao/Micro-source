@@ -11,7 +11,7 @@ Page({
             },
             {
                 title: '我的课程',
-                link: '/pages/my/myInfo/myInfo'
+                link: '/pages/my/mySource/mySource'
             },
             {
                 title: '喜欢的图书',

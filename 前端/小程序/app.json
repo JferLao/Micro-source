@@ -9,7 +9,8 @@
     "pages/login/login",
     "pages/my/favorBook/favorBook",
     "pages/soureMenu/sourceMenu",
-    "pages/sourceDetail/sourceDetail"
+    "pages/sourceDetail/sourceDetail",
+    "pages/my/mySource/mySource"
   ],
   "window": {
     "backgroundTextStyle": "light",
