@@ -1,5 +1,27 @@
 <view class="container">
-    <view class="video_content">
-        <video-cmp video="{{source}}"></video-cmp>
+  <view class="video_content">
+    <video-cmp video="{{video}}"></video-cmp>
+  </view>
+  <view class="detail_content">
+    <view class="title">
+      <text>{{sources.name}}</text>
     </view>
+    <view class="intro">
+      <text>{{sources.detail}}</text>
+    </view>
+    <view class="stuNum">
+      <text>正在学习的人数:{{sources.stuNum}}</text>
+    </view>
+  </view>
+  <view class="source_content">
+    <view class="title_content">
+      <text class="text">最新课程</text>
+      <text class="more" bindtap="onMore">查看更多 ></text>
+    </view>
+    <view class="source_content">
+      <block wx:for="{{source}}" wx:key="id">
+        <source source="{{item}}" bind:enterSource="enterSource"></source>
+      </block>
+    </view>
+  </view>
 </view>
