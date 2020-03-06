@@ -44,5 +44,11 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap90.json"
+  "sitemapLocation": "sitemap90.json",
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.2.4",
+      "provider": "wxa75efa648b60994b"
+    }
+  }
 }

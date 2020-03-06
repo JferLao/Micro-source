@@ -46,6 +46,7 @@ Page({
             this.setData({
                 source: res.source
             })
+            console.log(res);
         })
     },
 

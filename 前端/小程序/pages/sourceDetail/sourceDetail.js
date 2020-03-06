@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        source: {}
+        source: ''
     },
 
     /**
@@ -20,7 +20,8 @@ Page({
     // 获取课程内容
     onGetSource(id) {
         sourceModel.getSourceById(id, (res) => {
-            let data = res.source
+            let data = res.source.video
+            console.log(data);
             this.setData({
                 source: data
             })
