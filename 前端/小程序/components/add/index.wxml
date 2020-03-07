@@ -1,0 +1,3 @@
+<view class="container" bindtap = "add">
+  <image class="add" src="../../images/icon/add.png"></image>
+</view>

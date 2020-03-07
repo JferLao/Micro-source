@@ -55,7 +55,7 @@ class Forbbiden extends HttpException {
 class LikeError extends HttpException {
     constructor(msg, errorCode) {
         super()
-        this.code = 400
+        this.code = 200
         this.msg = msg || '你已经点过赞了'
         this.errorCode = errorCode || 60001
     }
@@ -63,7 +63,7 @@ class LikeError extends HttpException {
 class DislikeError extends HttpException {
     constructor(msg, errorCode) {
         super()
-        this.code = 400
+        this.code = 200
         this.msg = msg || '你已经取消点赞'
         this.errorCode = errorCode || 60002
     }

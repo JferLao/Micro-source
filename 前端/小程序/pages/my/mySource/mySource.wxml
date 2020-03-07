@@ -5,7 +5,7 @@
     </view>
     <view class="source_content">
       <block wx:for="{{source}}" wx:key="id">
-        <source source="{{item}}" bind:enterSource="enterSource"></source>
+        <source source="{{item}}" bind:enterSource="enterSource" bind:delete="deleteSource"></source>
       </block>
     </view>
   </view>

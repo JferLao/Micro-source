@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "video-cmp": "../../components/video/index",
-        "source": "../../components/source-item"
+        "source": "../../components/source-item",
+        "add-btn": "../../components/add"
     }
 }

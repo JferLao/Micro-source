@@ -9,6 +9,7 @@
   height: 200rpx;
   display: flex;
   flex-direction: column;
+  position: relative;
   /* background: #23DB85; */
 }
 .title{

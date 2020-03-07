@@ -77,6 +77,32 @@ class SourceModel extends HTTP {
         this.request(params)
     }
 
+    // 添加到我的课程
+    addMySource(id, success) {
+        var params = {
+            url: 'source/like',
+            data: {
+                sourceId: id
+            },
+            isAuth: true,
+            success
+        }
+        this.request(params)
+    }
+
+    // 从我的课程中移除
+    deleteMySource(id, success) {
+        var params = {
+            url: 'source/unlike',
+            data: {
+                sourceId: id
+            },
+            isAuth: true,
+            success
+        }
+        this.request(params)
+    }
+
 }
 export {
     SourceModel

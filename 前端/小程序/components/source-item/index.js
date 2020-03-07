@@ -25,6 +25,11 @@ Component({
             this.triggerEvent('enterSource', {
                 source: this.properties.source
             })
+        },
+        Ondelete(){
+          this.triggerEvent('delete', {
+            source: this.properties.source
+          })
         }
     }
 })

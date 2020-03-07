@@ -1,4 +1,4 @@
-<view class="source_item_content" bindtap = "OnSource">
+<view class="source_item_content" bindtap = "OnSource" bindlongpress='Ondelete' data-id='{{source.id}}'>
     <view class="image_content">
         <image class="image_content_pic" src="{{source.image}}">
             
